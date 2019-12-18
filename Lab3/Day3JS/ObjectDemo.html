@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Object Demoes</title>
+    <script>
+		//create objects
+        
+		//1- {}
+				
+        var obj = {};  //empty object
+        var book = {
+            "main title": "Javascript",  //spaces should be string
+            "edition": 2,
+			//could be another Object
+            author: { firstname: "eman", lastname: "fathi" }, //best name string,
+			//could be array
+			versions:[2015,2016,2013]
+        };
+
+       
+
+
+        //2- new   same as {}
+        var obj2 = new Object()//empty
+        var book2 = new Object
+		({
+            "main title": "Javascript",  //spaces should be string
+            "edition": 2,
+			//could be another Object
+            author: { firstname: "eman", lastname: "fathi" }, //best name string,
+			//could be array
+			versions:[2015,2016,2013]
+        });
+        
+	   
+      
+
+        //or you can add properties as usual after creating the object
+
+
+        //now try to call properties
+        //. or []
+        book.edition //getter
+        book.edition = 3;  //setter
+        book.author.firstname;
+        book["author"]["firstname"];
+        book.author["firstname"] = "mona";
+		book.versions[0];
+		book["versions"][0]
+        //book[0] wil not work
+
+        //note that main title doe not appear as property because of space
+        //only deal with it as [] 
+
+    
+
+        //can create any number of properties and delete them
+
+        delete book.edition
+
+        book.pages = 40;
+
+
+		//methods
+         book = {
+            "main title": "Javascript",  //spaces should be string
+            "edition": 2,
+            author: { firstname: "eman", lastname: "fathi" }, //best name string,
+            buyBook: function () {    console.log("buy book") },
+            borrowBook: function (name) { return name+" you can borrow book of "+this["main title"] } //must call them with this
+         };
+
+         book["borrowBook"]("eman")
+         //book[0]("eman")
+         book.borrowBook("eman");
+		 
+		//adding and deleting functions on run time
+		//and talk about deal with function as property
+		book.print=function(){ console.log(this['edition'])};
+		 
+		//now testing properties and methods
+        // 1- in operator
+        "author" in book  //true
+        "toString" in book  //true   true for inherited properties
+	
+		
+        //2- hasOwnProperty()
+        book.hasOwnProperty("author");    //true
+        book.hasOwnProperty("toString")   //false  for inherited
+		
+        //3- undefined
+        book.author == undefined  //false
+        //after delete it is true
+
+        // why === and !==   becasue it distingush between null and undefined
+        book.author = null  //we can set it with null as property
+        book.author == undefined   //true
+        book.author === undefined  //false
+
+        //////////////// finally object methods
+        
+        /////////////////////////////////
+         Object.keys(book)  //return object properties names
+		 //what if we want to display book properties only without functions
+		for(key in book )
+		{
+			if(typeof book[key]=="function")  //to remove functions
+			continue;
+			console.log(key);
+		}
+		  /********************* reference value *********************/
+		
+		//cant' create object from book
+        var book2 = book;
+        var book2 = new Object(book); // equal them by reference same as book2=book
+		
+    </script>
+</head>
+<body>
+
+</body>
+</html>

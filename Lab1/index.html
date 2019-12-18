@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <title>Mohamed Beshri Amer - Task1</title>
+       
+       <link rel="stylesheet" href="style.css">
+       <script>
+           console.log(firstName);
+       </script>
+    
+    </head>  
+    <body>
+
+
+        
+
+
+        <script src="external.js"></script>
+        <script>
+            console.log("The Summation of Number1  and Number2 :",parseFloat( number1+number2) );
+            console.log("The Summation of number and Array :",number1+arrayOfNumbers);
+            console.log("Summation of flag and number2 : ",(flag+number2));
+            console.log("Summation of firstName and flag :",(firstName+flag))
+            console.log("Summation of number1 and firstName :",(number1+firstName));
+            console.log("Multiplication of number1 and flag : ",(number1*flag));
+            console.log("Divide number1 and lastName : ",(number1/lastName));
+            console.log("The FullName is :",(firstName+" "+lastName));
+            console.log("===============================");
+            console.log("The Last Name characters :-");
+
+            for (var i of lastName) {
+                console.log(i);
+            }
+            console.log("===============================");
+            console.log("The Array of Numbers : ");
+            for(var i in arrayOfNumbers){
+                console.log(arrayOfNumbers[i]);
+            }
+            console.log("===============================");
+            console.log(`Display Numbers array but each number should be multiplied by 5 Then display only values that greater than 20 from resulted array :-`);
+            
+            for(i=0;i<arrayOfNumbers.length;i++){
+                if(!isNaN(arrayOfNumbers[i]))
+                arrayOfNumbers[i] = arrayOfNumbers[i]*5;
+            }
+            console.log("===============================");
+            for (var i of arrayOfNumbers) {
+                if(i>20){
+                    console.log(i);
+                }
+            }
+            console.log("===============================");
+            firstName[3]="h";
+            console.log("=============================");
+            for (var i of firstName) {
+                console.log(i);
+            }
+        
+
+
+
+
+        </script>
+    </body>
+</html>

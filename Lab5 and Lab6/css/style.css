@@ -1,0 +1,35 @@
+.title-radios{
+    display: block !important;
+}
+
+input[type="radio"]{
+    appearance: none;
+    -webkit-appearance: none;
+    width: 19px;
+    height: 19px;
+    background-color: #eee;
+    border-radius: 50%;
+    vertical-align: middle;
+    outline: none;
+
+}
+
+input[type="radio"] label{
+    vertical-align: middle;
+}
+input[type="radio"]:checked{
+    background-color: #34495e;
+    outline: none;
+}
+.SD{
+    background-color: #353b48;
+    color:#fff;
+}
+.OS{
+    background-color: #273c75;
+    color:#fff;
+}
+.EL{
+    background-color: #2f3640;
+    color:#fff;
+}
