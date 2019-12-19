@@ -1,7 +1,5 @@
 
-SubmitData();
-initialTable();
-Filter();
+
 var counter=-1;
 var studentArray= [];
 
@@ -78,6 +76,10 @@ function Student(studentName,studentGrade,department){
 
 }
 
+Student.prototype.Hello ="Hello";
+SubmitData();
+initialTable();
+Filter();
 
 
 function SubmitData(){
