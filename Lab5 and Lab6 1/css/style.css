@@ -1,0 +1,48 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.myimage{
+    width: 100%;
+}
+.btn-prev , .btn-next{
+    appearance: none;
+    -webkit-appearance: none;
+    background-color:rgba(0, 0, 0, 0.3);
+    color: #ffff;
+    position: absolute;
+    outline: none;
+     border: none;  
+     width: 50px;
+     height: 50px;
+     border-radius: 50%;
+     font-size: 20px;
+     font-weight: bolder;
+     cursor: pointer;
+
+}
+.btn-next{
+    z-index: 999;
+    top:50%;
+    left: 95%;
+    
+}
+.btn-prev{
+    z-index: 999;
+    top:50%;
+    left: 1%;
+}
+.counterimage{
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #fff;
+    width: 100px;
+    height:auto;
+    text-align: center;
+    z-index: 900;
+    background-color: rgba(0, 0, 0, 0.1);
+    color:#fff;
+}
+
+

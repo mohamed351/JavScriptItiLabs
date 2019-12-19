@@ -1,6 +1,7 @@
 
 SubmitData();
 initialTable();
+Filter();
 var counter=-1;
 var studentArray= [];
 
@@ -101,6 +102,48 @@ function SubmitData(){
 function initialTable(){
   var std = new Student();
    document.getElementById("studentTable").append(std.printHeader());
+}
+function Filter(){
+   var eventElement = document.getElementById("element");
+ 
+   eventElement.addEventListener("change",function(e){
+      drawTableAndFilter("studentbody",studentArray,this.value);
+   });
+}
+function drawTableAndFilter(tobody,array =[], filtervalue){
+ if(tobody !=null && array!=null){
+  var bodyofIt = document.getElementById(tobody);
+  bodyofIt.innerHTML ="";
+   var myfilter =[];
+
+   switch(filtervalue){
+      case "pass":
+    myfilter =  array.filter(function(a){
+            console.log(a);
+         return a.studentGrade >50;
+   
+   });
+         break;
+      case "fail":
+
+         myfilter =  array.filter(function(a){
+            console.log(a);
+            return a.studentGrade <50;
+      
+      });
+         break;
+      case "all":
+         myfilter = array;
+      
+
+   }
+   
+   for(i of myfilter){
+      bodyofIt.append(i.ToString());
+   }
+
+ }
+  
 }
 
 

@@ -7,9 +7,9 @@
    </head>
    <body>
        
-    <div class="container mt-5">
+    <div class="container ">
         <div class="row">
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-4 mt-5">
                 <div class="form-group row">
              <label for="studentName" class="form-label">Student Name</label>
                     <input id="studentName" name="studentName" type="text" class="form-control" required="required" placeholder="Student Name" />
@@ -34,8 +34,16 @@
                        </div>
 
             </div>
-            <div  class="col-12 col-md-8">
-               
+            <div  class="col-12 col-md-8 mt-5">
+               <div class="form-group">
+                <select id="element" class="form-control">
+                    <option disabled selected>--Filter--</option>
+                    <option value="pass">Pass</option>
+                    <option value="fail">fail</option>
+                    <option value="all">all</option>
+                </select>
+            
+               </div>
                 <table class="table  table-bordered" id="studentTable">
                     
                     <tbody id="studentbody">
