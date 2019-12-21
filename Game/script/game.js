@@ -174,10 +174,19 @@ var rowChecker = document.getElementById("row("+(parseInt(row)+1)+")-column("+co
   }
   else
   {
-    moveItem.parentElement.children[0].id ="";
-    //generate new one
+
+    document.getElementById("moveItem").parentElement.children[0].id="";
+    /*moveItem.parentElement.children[0].id ="";*/
+    GenerateBall();
+  
   }
   //delete id and generate new one With id
+}
+else
+{
+    document.getElementById("moveItem").parentElement.children[0].id="";
+    /*moveItem.parentElement.children[0].id ="";*/
+    GenerateBall();
 }
 
 
@@ -185,10 +194,23 @@ var rowChecker = document.getElementById("row("+(parseInt(row)+1)+")-column("+co
 
 
 },1000);
-function generateRandoNumber(greateNumber, LowNumber){
-    var rand =parseInt( Math.random()*10);
-    if(rand<number1 && rand>number2)
-    return rand;
-    else
-    generateRandoNumber(greateNumber,LowNumber);
+
+
+//from w3schools // i have searched the random number between max and min
+//i have made it a function using while loop but it is not like this 
+//so i deleted and i have test thanks :) Mohamed Beshri Amer
+function GetRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min) ) + min;
+}
+function GenerateBall(){
+  var row =0;
+  var col=GetRandomNumber(0,5);
+ var color = GetRandomNumber(1, 5);
+  var ball =  document.createElement("i");
+  ball.classList.add("color"+color);
+  ball.classList.add("fas");
+  ball.classList.add("fa-basketball-ball");
+  ball.id ="moveItem";
+ document.getElementById("row("+row+")-column("+col+")").append(ball);
+
 }
