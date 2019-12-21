@@ -7,14 +7,7 @@ window.addEventListener("load",function(){
   var element = document.getElementById("game");
     InitalGame();
     DrawBoxs(8,5,element);
-/*
-  var ball =  document.createElement("i");
-  ball.classList.add("color1");
-  ball.classList.add("fas");
-  ball.classList.add("fa-basketball-ball");
-  ball.id ="moveItem";
- document.getElementById("row(0)-column(1)").append(ball);
-*/
+
 GenerateBall();
 
  var ball =  document.createElement("i");
@@ -25,14 +18,7 @@ GenerateBall();
 document.getElementById("row(7)-column(1)").append(ball);
  
 
-/*
-var ball =  document.createElement("i");
-ball.classList.add("color1");
-ball.classList.add("fas");
-ball.classList.add("fa-basketball-ball");
-ball.id ="";
-document.getElementById("row(1)-column(0)").append(ball);
-*/
+
 
 
 var ball =  document.createElement("i");
@@ -168,16 +154,18 @@ var rowChecker = document.getElementById("row("+(parseInt(row)+1)+")-column("+co
   if(row <7){
   if(rowChecker.innerHTML =="&nbsp;"){
   row++;
-  console.log(row);
+
   document.getElementById("row("+row+")-column("+column+")").innerHTML =element.innerHTML;
   element.innerHTML ="&nbsp;";
-  console.log("row("+(parseInt(row)+1)+")-column("+column+")");
+
   }
   else
   {
 
     document.getElementById("moveItem").parentElement.children[0].id="";
-    /*moveItem.parentElement.children[0].id ="";*/
+    if(document.querySelector(".row").getElementsByTagName("i").length >0){
+        GameOverScreen();
+      }
     GenerateBall();
   
   }
@@ -186,7 +174,9 @@ var rowChecker = document.getElementById("row("+(parseInt(row)+1)+")-column("+co
 else
 {
     document.getElementById("moveItem").parentElement.children[0].id="";
-    /*moveItem.parentElement.children[0].id ="";*/
+  if(document.querySelector(".row").getElementsByTagName("i").length >0){
+    GameOverScreen();
+  }
     GenerateBall();
 }
 
@@ -194,7 +184,7 @@ else
 
 
 
-},1000);
+},500);
 
 
 //from w3schools // i have searched the random number between max and min
@@ -217,6 +207,10 @@ function GenerateBall(){
 }
 
 function GameOverScreen(){
+  var screen= document.getElementById("gameOverScreen");
+  screen.classList.remove("gameOver-hide");
+  clearInterval(timer);
+
 
     
 
