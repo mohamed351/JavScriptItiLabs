@@ -1,0 +1,147 @@
+@font-face{
+    font-family: "myfont";
+    src: url(../fonts/Game.ttf);
+}
+@font-face{
+    font-family: "textboxfont";
+    src: url(../fonts/aurora.ttf);
+}
+@keyframes spinner{
+    from {transform: rotateZ(0deg);}
+    to {transform: rotateZ(360deg);}
+}
+body{
+    background-image: url("../img/bg.png");
+    background-color: #8a106f;
+    
+}
+*{
+    box-sizing: border-box;
+}
+.container{
+    width: 80%;
+    margin: auto;
+
+}
+.text-center{
+    text-align: center;
+    font-family: "myfont";
+
+}
+.text-header{
+    font-size: 90px;
+    color:#fff;
+    margin-bottom: 10px;
+
+}
+.input-container{
+ text-align: center;
+}
+.input-container input{
+
+    appearance: none;
+    -webkit-appearance: none;
+}
+.input-container input, select {
+    
+    font-family: "myfont";
+    width: 25%;
+    font-size: 20px;
+    border: none;
+    padding: 10px;
+
+
+}
+select{
+  margin-top: 25px;
+ 
+}
+.select-GoToAnother{
+    background-color: #be0fb6;
+    border: none;
+    width: 25%;
+    font-family: "myfont";
+    font-size: 26px;
+    color:#fff;
+    outline: none;
+    transition-duration: 2s;
+}
+.select-GoToAnother:hover
+{
+    background-color: #660456;
+    cursor: pointer;
+}
+.helloword{
+   animation: spinner;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    font-size: 25px;
+    z-index: 9999;
+    font-size: 50px;
+    display:inline-block ;
+}
+
+.foot-container{
+    text-align: center;
+    margin-bottom: 20px;
+    
+}
+.color1{
+    color: red;
+}
+.color2{
+    color: blue;
+}
+.color3{
+    color: green;
+}
+.color4{
+    color:lightseagreen;
+}
+.game-container{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    
+}
+.player-name-container ,.score-cotainer,.level-container{
+    display: inline-block;
+    color:#fff;
+    font-family: myfont;
+    font-size: 25px;
+}
+.btn-history{
+    border: none;
+    background-color: #815279;
+    color:#fff;
+    font-family: "myfont";
+    font-size: 20px;
+    outline: none;
+
+}
+.btn-history:hover{
+    background-color: #11040e;
+}
+.game-player-container{
+    width: 50%;
+    margin: auto;
+    margin-top: 30px;
+
+    
+}
+.box{
+    background-color: #333;
+    width: 18%;
+    height: 70px;
+    display: inline-block;
+    border: 0.2px solid #fff;
+    text-align: center;
+    font-size: 40px;
+    border-collapse: collapse;
+}
+.font-ball{
+    padding: 6.5px;
+ 
+    
+}
