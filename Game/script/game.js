@@ -105,7 +105,13 @@ function DrawBoxs(sizeofRow,sizeOfCol, gameContainer )
 
 var timer = setInterval(function(){
 
-  var element =  document.getElementById("moveItem").parentElement;
+ var element2 =document.getElementById("moveItem");
+ if(element2 == null){
+    GenerateBall();
+ }
+ 
+  var element =  element2.parentElement;
+ 
   var row = element.getAttribute("row");
   var column =element.getAttribute("column");
 
@@ -125,6 +131,7 @@ var rowChecker = document.getElementById("row("+(parseInt(row)+1)+")-column("+co
     var colorChecker = document.getElementById("moveItem");
     colorChecker.parentElement.children[0].id="";
     CheckTheRow(colorChecker);
+    CheckTheColumn(colorChecker);
     if(document.querySelector(".row").getElementsByTagName("i").length >0){
         GameOverScreen();
       }
@@ -138,6 +145,7 @@ else
     var colorChecker = document.getElementById("moveItem");
     colorChecker.parentElement.children[0].id="";
     CheckTheRow(colorChecker);
+    CheckTheColumn(colorChecker);
   if(document.querySelector(".row").getElementsByTagName("i").length >0){
     GameOverScreen();
   }
@@ -195,6 +203,37 @@ function CheckTheRow(color){
        }
    }
   
+
+
+}
+function CheckTheColumn(color){
+    
+ var column = color.parentElement.getAttribute("column");
+ var row =  color.parentElement.getAttribute("row");
+ var mainColor = color.getAttribute("color");
+ var  ArrayOfDeletion =[];
+ var repeated =0;
+ for (var i = 0; i <8; i++) {
+    var colu =document.getElementById("row("+i+")-column("+column+")").querySelector("i")
+   if(colu !=null){
+      if(colu.getAttribute("color") == mainColor){
+        repeated++;
+        ArrayOfDeletion.push(colu);
+      }
+      else
+      {
+          repeated =0;
+      }
+   }
+  
+ }
+ //console.log(repeated);
+ if(ArrayOfDeletion.length ==4){
+   for(i of ArrayOfDeletion){
+    i.parentElement.innerHTML ="&nbsp;";
+   }
+ }
+
 
 
 }
