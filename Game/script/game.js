@@ -124,12 +124,12 @@ var rowChecker = document.getElementById("row("+(parseInt(row)+1)+")-column("+co
     
     var colorChecker = document.getElementById("moveItem");
     colorChecker.parentElement.children[0].id="";
-    
+    CheckTheRow(colorChecker);
     if(document.querySelector(".row").getElementsByTagName("i").length >0){
         GameOverScreen();
       }
     GenerateBall();
-  
+    
   }
   //delete id and generate new one With id
 }
@@ -137,7 +137,7 @@ else
 {
     var colorChecker = document.getElementById("moveItem");
     colorChecker.parentElement.children[0].id="";
-    
+    CheckTheRow(colorChecker);
   if(document.querySelector(".row").getElementsByTagName("i").length >0){
     GameOverScreen();
   }
@@ -181,5 +181,20 @@ function GameOverScreen(){
 
 }
 function CheckTheRow(color){
-   
+   var mycolor = color.getAttribute("color");
+   /*
+   var row = color.parentElement.getAttribute("row");
+   var column = color.parentElement.getAttribute("column");
+   console.log(mycolor,row,column);
+   */
+    var el = color.parentElement.parentElement.querySelectorAll("[color='"+mycolor+"']");
+
+   if(el.length >=4){
+       for(i of el){
+        i.parentElement.innerHTML ="&nbsp;"
+       }
+   }
+  
+
+
 }
