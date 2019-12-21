@@ -10,47 +10,7 @@ window.addEventListener("load",function(){
 
 GenerateBall();
 
- var ball =  document.createElement("i");
- ball.classList.add("color1");
- ball.classList.add("fas");
- ball.classList.add("fa-basketball-ball");
- ball.id ="";
-document.getElementById("row(7)-column(1)").append(ball);
  
-
-
-
-
-var ball =  document.createElement("i");
-ball.classList.add("color1");
-ball.classList.add("fas");
-ball.classList.add("fa-basketball-ball");
-ball.id ="";
-document.getElementById("row(7)-column(2)").append(ball);
-
-
-var ball =  document.createElement("i");
-ball.classList.add("color1");
-ball.classList.add("fas");
-ball.classList.add("fa-basketball-ball");
-ball.id ="";
-document.getElementById("row(7)-column(3)").append(ball);
-
-var ball =  document.createElement("i");
-ball.classList.add("color1");
-ball.classList.add("fas");
-ball.classList.add("fa-basketball-ball");
-ball.id ="";
-document.getElementById("row(7)-column(4)").append(ball);
-
-
-
-   
-   
-   
-
-
-
     
 });
 
@@ -161,8 +121,10 @@ var rowChecker = document.getElementById("row("+(parseInt(row)+1)+")-column("+co
   }
   else
   {
-
-    document.getElementById("moveItem").parentElement.children[0].id="";
+    
+    var colorChecker = document.getElementById("moveItem");
+    colorChecker.parentElement.children[0].id="";
+    
     if(document.querySelector(".row").getElementsByTagName("i").length >0){
         GameOverScreen();
       }
@@ -173,7 +135,9 @@ var rowChecker = document.getElementById("row("+(parseInt(row)+1)+")-column("+co
 }
 else
 {
-    document.getElementById("moveItem").parentElement.children[0].id="";
+    var colorChecker = document.getElementById("moveItem");
+    colorChecker.parentElement.children[0].id="";
+    
   if(document.querySelector(".row").getElementsByTagName("i").length >0){
     GameOverScreen();
   }
@@ -200,6 +164,7 @@ function GenerateBall(){
   var ball =  document.createElement("i");
   ball.classList.add("color"+color);
   ball.classList.add("fas");
+  ball.setAttribute("color",color);
   ball.classList.add("fa-basketball-ball");
   ball.id ="moveItem";
  document.getElementById("row("+row+")-column("+col+")").append(ball);
@@ -214,4 +179,7 @@ function GameOverScreen(){
 
     
 
+}
+function CheckTheRow(color){
+   
 }
