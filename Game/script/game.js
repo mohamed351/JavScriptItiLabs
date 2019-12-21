@@ -7,14 +7,15 @@ window.addEventListener("load",function(){
   var element = document.getElementById("game");
     InitalGame();
     DrawBoxs(8,5,element);
-
+/*
   var ball =  document.createElement("i");
   ball.classList.add("color1");
   ball.classList.add("fas");
   ball.classList.add("fa-basketball-ball");
   ball.id ="moveItem";
  document.getElementById("row(0)-column(1)").append(ball);
-
+*/
+GenerateBall();
 
  var ball =  document.createElement("i");
  ball.classList.add("color1");
@@ -22,7 +23,7 @@ window.addEventListener("load",function(){
  ball.classList.add("fa-basketball-ball");
  ball.id ="";
 document.getElementById("row(7)-column(1)").append(ball);
-
+ 
 
 /*
 var ball =  document.createElement("i");
@@ -156,7 +157,7 @@ function DrawBoxs(sizeofRow,sizeOfCol, gameContainer )
 
 }
 
-setInterval(function(){
+var timer = setInterval(function(){
 
   var element =  document.getElementById("moveItem").parentElement;
   var row = element.getAttribute("row");
@@ -212,5 +213,11 @@ function GenerateBall(){
   ball.classList.add("fa-basketball-ball");
   ball.id ="moveItem";
  document.getElementById("row("+row+")-column("+col+")").append(ball);
+
+}
+
+function GameOverScreen(){
+
+    
 
 }
