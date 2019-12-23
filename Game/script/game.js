@@ -1,9 +1,7 @@
 
 window.addEventListener("load",function(){
     
-
-
-  
+  score =0;
   var element = document.getElementById("game");
     InitalGame();
     DrawBoxs(8,5,element);
@@ -86,6 +84,7 @@ function DrawBoxs(sizeofRow,sizeOfCol, gameContainer )
           
             element.classList.add("box");
             element.classList.add("font-ball");
+            
             element.id ="row("+i+")-column("+x+")"; ;
             element.innerHTML ="&nbsp";
             element.setAttribute("column",x);
@@ -156,7 +155,7 @@ else
 
 
 
-},500);
+},250);
 
 
 //from w3schools // i have searched the random number between max and min
@@ -173,6 +172,7 @@ function GenerateBall(){
   ball.classList.add("color"+color);
   ball.classList.add("fas");
   ball.setAttribute("color",color);
+  ball.classList.add("helloword2");
   ball.classList.add("fa-basketball-ball");
   ball.id ="moveItem";
  document.getElementById("row("+row+")-column("+col+")").append(ball);
@@ -201,6 +201,8 @@ function CheckTheRow(color){
        for(i of el){
         i.parentElement.innerHTML ="&nbsp;"
        }
+       score+=20;
+       document.getElementById("playerScore").innerText =score;
    }
   
 
@@ -219,19 +221,26 @@ function CheckTheColumn(color){
       if(colu.getAttribute("color") == mainColor){
         repeated++;
         ArrayOfDeletion.push(colu);
+        if(repeated ==4){
+          break;
+        }
       }
       else
-      {
+      { 
+        ArrayOfDeletion =[];
+        
           repeated =0;
       }
    }
   
  }
- //console.log(repeated);
+ 
  if(ArrayOfDeletion.length ==4){
    for(i of ArrayOfDeletion){
     i.parentElement.innerHTML ="&nbsp;";
    }
+   score+=10;
+   document.getElementById("playerScore").innerText =score;
  }
 
 

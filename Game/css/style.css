@@ -76,9 +76,14 @@ select{
     animation-duration: 2s;
     animation-iteration-count: infinite;
     font-size: 25px;
-    z-index: 9999;
+    z-index: 50;
     font-size: 50px;
     display:inline-block ;
+}
+.helloword2{
+    animation: spinner;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
 }
 
 .foot-container{
@@ -156,7 +161,7 @@ select{
     font-size: 50px;
     font-family: "myfont";
     background-image: url("../img/bg.png");
-   
+    z-index: 9999;
 
 }
 .gameOver-hide{
