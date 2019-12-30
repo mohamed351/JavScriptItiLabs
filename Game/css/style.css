@@ -110,7 +110,7 @@ select{
     justify-content: space-around;
     
 }
-.player-name-container ,.score-cotainer,.level-container{
+.player-name-container ,.score-cotainer,.level-container , .timer-container{
     display: inline-block;
     color:#fff;
     font-family: myfont;
@@ -169,4 +169,16 @@ select{
 }
 .gameOver-show{
   display: block;
+}
+.history-game{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    
+    border:1px solid #fff;
+    border-collapse: collapse;
+    color: #fff;
+}
+.history-game tr td , .history-game tr th {
+   border: 1px solid #fff;
 }

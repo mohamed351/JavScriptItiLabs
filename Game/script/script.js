@@ -10,7 +10,7 @@ if(mylocalStorage.getItem("player")== null){
     
     window.localStorage.setItem("player",[]);
     mylocalStorage = window.localStorage;
-    playerArray =[];
+  
   
 }
 else
@@ -36,7 +36,7 @@ document.getElementById("btn-start").onclick =function(){
     var level  = document.getElementById("player-level").value;
      newplayer =new Players(playerName,level);
      console.log(typeof newplayer)
-     playerArray.push(newplayer);
+     playerArray.push(JSON.stringify(newplayer));
     mylocalStorage.setItem("player",JSON.stringify(playerArray));
   
     window.location.href =`game.html?name=${newplayer.playerName}&score=${newplayer.score}&level=${newplayer.level}`
